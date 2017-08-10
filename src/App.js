@@ -8,8 +8,9 @@ class App extends Component {
             <div className="App">
                 <div className="header">
                     <div className="headerContain">
-                        <text className="font-white font-4rem">魏清峰</text>
-                        <text className="font-white font-2rem">Android开发工程师</text>
+                        <img className="imgHead" src={require('./image/icon_bg_small.png')} alt="未正确显示"/>
+                        <text className="font-white font-2vw marginTop">魏清峰</text>
+                        <text className="font-white font-1vw marginTop">Android开发工程师</text>
                     </div>
                 </div>
                 <div className="center"></div>
