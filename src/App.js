@@ -3,11 +3,24 @@ import './App.css';
 import './css/font.css';
 import './css/margin.css'
 import './css/color.css'
+import BurgerMenu from 'react-burger-menu';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            isOpen:false,
+        };
+        this.getMenu = this.getMenu.bind(this);
+        this.scrollToAnchor = this.scrollToAnchor.bind(this);
+    }
+
     render() {
         return (
-            <div className="App">
+            <div className="App" id="outer-container">
+                {this.getMenu()}
+            <main id="page-wrap">
+                <img src={require('./image/icon_menu.png')} className="btnMenu"></img>
                 <div className="header">
                     <div className="headerContain font-white font-micro">
                         <img className="imgHead" src={require('./image/icon_bg_small.png')} alt="未正确显示"/>
@@ -17,7 +30,7 @@ class App extends Component {
                 </div>
                 <div className="center">
                     <div className="center_top">
-                        <div className="font-2rem" style={{textAlign:'center'}}>个人简介</div>
+                        <div className="font-2rem" style={{textAlign:'center'}}><a id="tag1">个人简介</a></div>
                         <p className="margin_top_5vw text_66 text_intent">
                             嗨，欢迎来的我的个人主页！正如你所看到的，我就是魏清峰。
                         </p>
@@ -29,7 +42,7 @@ class App extends Component {
                     </div>
                     <div className="divider"></div>
                     <div className="center_recent">
-                        <div className="font-2rem" style={{textAlign:'center'}}>最近作品</div>
+                        <div className="font-2rem" style={{textAlign:'center'}} id="tag2">最近作品</div>
                         <div className="item margin_top_5vw">
                             <img className="icon_item" src={require('./image/icon_carcare.png')}/>
                             <div className="item_content margin_left_5vw">
@@ -39,12 +52,12 @@ class App extends Component {
                             </div>
                         </div>
                         <div className="item margin_top_5vw">
-                            <div className="item_content margin_left_5vw">
-                                <p style={{textIndent:'-2em'}}><span style={{color:'#333'}}>名称：</span><span style={{color:'#666'}}>蟹老板</span></p>
-                                <p style={{textIndent:'-2em'}}><span style={{color:'#333'}}>简介：</span>
+                            <div className="item_content">
+                                <p><span style={{color:'#333'}}>名称：</span><span style={{color:'#666'}}>蟹老板</span></p>
+                                <p><span style={{color:'#333'}}>简介：</span>
                                     <span style={{color:'#666'}}>蟹老板是一款提供单车维修服务的实用性生活app，入驻了众多有丰富经验的单车维修师傅，提供维修门店，为市民单车出行提供保障。</span></p>
                             </div>
-                            <img className="icon_item" src={require('./image/icon_repaircar.png')}/>
+                            <img className="icon_item margin_left_5vw" src={require('./image/icon_repaircar.png')}/>
                         </div>
                         <div className="item margin_top_5vw">
                             <img className="icon_item" src={require('./image/icon_cloud.png')}/>
@@ -57,7 +70,7 @@ class App extends Component {
                     </div>
                     <div className="divider"></div>
                     <div className="center_recent">
-                        <div className="font-2rem" style={{textAlign:'center'}}>杂谈
+                        <div className="font-2rem" style={{textAlign:'center'}} id="tag3">杂谈
                             <ol>
                                 <li>App开发流程：销售→产品经理与客户沟通确认需求→UI、前端、后台开会讨论立项→UE→UI→
                                     前端UI、后台接口同时进行→前端、后台密切沟通，接口调试→Bug测试完善→项目交付。</li>
@@ -76,7 +89,7 @@ class App extends Component {
                     <div className="center_bot">
                         <div className="center_bot_child">
                             <ul className="ul">
-                                <li className="font-1_5rem">职业技能</li>
+                                <li className="font-1_5rem" id="tag4">职业技能</li>
                                 <li className="margin_1vh text_66">Java</li>
                                 <li className="margin_1vh text_66">Android</li>
                                 <li className="margin_1vh text_66">HTML/CSS</li>
@@ -126,8 +139,44 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
+            </main>
             </div>
         );
+    }
+
+
+    getMenu(){
+        const items = [
+            <a key="0" onClick={()=>this.scrollToAnchor('tag1')}><span>个人简介</span></a>,
+            <a key="1" onClick={()=>this.scrollToAnchor('tag2')}><span>最近作品</span></a>,
+            <a key="2" onClick={()=>this.scrollToAnchor('tag3')}><span>杂谈</span></a>,
+            <a key="3" onClick={()=>this.scrollToAnchor('tag4')}><span>职业技能</span></a>,
+            <a key="4" onClick={()=>this.scrollToAnchor('tag4')}><span>软件环境</span></a>,
+            <a key="5" onClick={()=>this.scrollToAnchor('tag4')}><span>代表作品</span></a>,
+            <a key="5" onClick={()=>this.scrollToAnchor('tag4')}><span>我的足迹</span></a>,
+            <a key="5" onClick={()=>this.scrollToAnchor('tag4')}><span>职业规划</span></a>,
+        ];
+        const Menu = BurgerMenu['elastic'];
+        return (
+                <Menu id={'elastic'}
+                      pageWrapId={'page-wrap'}
+                      outerContainerId={'outer-container'}
+                      burgerButtonClassName={'btnMenu'}
+                      width={'300px'}
+                      isOpen={this.state.isOpen}>
+                    {items}
+                </Menu>
+        );
+    }
+
+    scrollToAnchor(anchorName){
+        if (anchorName) {
+            let anchorElement = document.getElementById(anchorName);
+            if(anchorElement) { anchorElement.scrollIntoView(); }
+        }
+        this.setState({
+            isOpen:false,
+        });
     }
 }
 

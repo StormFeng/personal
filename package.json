@@ -5,6 +5,7 @@
   "homepage": "http://stormfeng.github.io/personal",
   "dependencies": {
     "react": "^15.6.1",
+    "react-burger-menu": "^2.1.4",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.11"
   },
