@@ -1,8 +1,10 @@
 {
-  "main.css": "static/css/main.ec3ae4ec.css",
-  "main.css.map": "static/css/main.ec3ae4ec.css.map",
-  "main.js": "static/js/main.5caead2b.js",
-  "main.js.map": "static/js/main.5caead2b.js.map",
-  "static\\media\\icon_bg.png": "static/media/icon_bg.7dc16290.png",
-  "static\\media\\icon_bg_small.png": "static/media/icon_bg_small.d1f607c1.png"
+  "main.css": "static/css/main.17536d9b.css",
+  "main.css.map": "static/css/main.17536d9b.css.map",
+  "main.js": "static/js/main.21678e94.js",
+  "main.js.map": "static/js/main.21678e94.js.map",
+  "static\\media\\bg_personal.png": "static/media/bg_personal.74fe45da.png",
+  "static\\media\\icon_bg_small.png": "static/media/icon_bg_small.dc7b875c.png",
+  "static\\media\\icon_carcare.png": "static/media/icon_carcare.8218a9f6.png",
+  "static\\media\\icon_repaircar.png": "static/media/icon_repaircar.b4ef0f68.png"
 }
