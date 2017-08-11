@@ -1,0 +1,24 @@
+.margin_1vh{
+    margin-top: 1vh;
+}
+.margin_2vh{
+    margin: 2vh;
+}
+.margin_top_5vw{
+    margin-top: 5vw;
+}
+.margin_left_5vw{
+    margin-left: 5vw;
+}
+.margin_right_3vw{
+    margin-right: 3vw;
+}
+ol{
+    font-size:1.3rem;
+    color:#666;
+    text-align: start;
+}
+ol li{
+    margin-top: 2vw;
+    line-height: 30px;
+}

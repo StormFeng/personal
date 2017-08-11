@@ -7,8 +7,14 @@
 .font-1rem{
     font-size: 1rem;
 }
+.font-1_5rem{
+    font-size: 1.5rem;
+}
 .font-2rem{
     font-size: 2rem;
+}
+.font-2_5rem{
+    font-size: 2.5rem;
 }
 .font-3rem{
     font-size: 3rem;
@@ -18,4 +24,7 @@
 }
 .font-5rem{
     font-size: 5rem;
+}
+.font-micro{
+    font-family: 微软雅黑;
 }
